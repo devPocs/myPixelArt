@@ -2,7 +2,7 @@ function makeGrid() {
 	
 	// Select size input
 	
-	var canvas, cells, Height, Width, Rows;
+	var canvas, myCell, Height, Width, Rows;
 	
 	canvas = $('#pixelCanvas');
 	Height = $('#inputHeight').val();
@@ -20,26 +20,26 @@ function makeGrid() {
 		Rows.append('<td></td>');
 	} 
 	
-	cell = canvas.find('td');
+	myCell = canvas.find('td');
 	
 	
-	cell.click(function(e) {
+	myCell.click(function(e) {
 		e.preventDefault();
 	
-		var color;
-		color = $("#colorPicker").val();
-		$(this).attr('bgcolor', color);
+		var myColor;
+		myColor = $("#colorPicker").val();
+		$(this).attr('bgcolor', myColor);
 	});
 	
 }
 
 
 // When size is submitted by the user, call makeGrid()
-var submitQuery;
+var submitVal;
 
-submitQuery = $('input[type="submit"]')
+submitVal = $('input[type="submit"]')
 
-submitQuery.click(function(event) {
+submitVal.click(function(event) {
   event.preventDefault();
   makeGrid();
 });
